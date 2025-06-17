@@ -121,19 +121,18 @@ export default function HomePage() {
           {/* Countdown Banner */}
           <section className="relative z-10 mt-6 md:mt-16 flex justify-center">
             <div className="bg-[#B43CFB]/40 text-white text-sm px-4 py-2 rounded-full backdrop-blur-sm">
-              Registration ends in 2 days, 10 hours, 5 min
+              Limited spots available! Apply now to secure your future.
             </div>
           </section>
           {/* Hero Main Content */}
           <main className="relative z-10 flex flex-col items-center text-center mt-16 md:mt-24 px-4 md:px-16 lg:px-24">
             {/* Large Heading */}
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight tracking-wide max-w-4xl">
-              Lorem ipsum dolor sit amet consectetur.
+            <h1 className="text-2xl md:text-4xl lg:text-5xl font-extrabold leading-tight tracking-wide max-w-4xl">
+              Gara Bootcamp by Great Commission Ministries Ethiopia
             </h1>
             {/* Subtext */}
             <p className="mt-6 text-base md:text-lg text-gray-200 max-w-2xl">
-              Train in real-world technologies, collaborate on projects, and
-              graduate with a portfolio that gets you hired.
+              Unlock your potential in digital media and technology. Our intensive bootcamp offers hands-on training, collaborative projects, and mentorship to equip you for impactful ministry and professional success.
             </p>
             {/* Date and Arrow Icon */}
             <div className="mt-8 flex items-center space-x-2 text-lg text-gray-300">
@@ -222,34 +221,32 @@ export default function HomePage() {
                 <div className="absolute inset-0 bg-gradient-to-br from-[#8A2BE2] to-[#FF00FF] opacity-80 rounded-t-xl"></div>
                 <img
                   src="/program-section(card-images)/media.png"
-                  alt="Media Track Illustration"
+                  alt="Digital Media Track Illustration"
                   className="relative z-10 h-full w-full object-cover"
                 />
               </div>
               <div className="p-6 pt-4">
                 <h3 className="text-2xl font-bold uppercase text-white mb-2 text-left">
-                  MEDIA
+                  Digital Media & Storytelling
                 </h3>
                 <p className="text-lg font-semibold text-gray-200 mb-4 text-left">
-                  Media Track Structure
+                  Crafting impactful narratives for a digital world.
                 </p>
                 <p className="text-sm text-gray-300 leading-relaxed mb-6 text-left">
-                  Ignite your imagination! Share your insights and concepts
-                  here. Keep it brief and captivating. Let&apos;s bring your
-                  vision to life!
+                  Dive into the art and science of visual and audio communication. This track covers fundamental principles and practical skills for creating compelling media content that resonates with audiences.
                 </p>
                 <h4 className="text-md font-semibold text-gray-200 mb-2 text-left">
                   Categories
                 </h4>
                 <ul className="text-sm text-gray-300 list-none p-0 space-y-1 text-left">
                   <li>
-                    <Chip text="Photography & Graphic Design" />
+                    <Chip text="Photography & Visual Design" />
                   </li>
                   <li>
-                    <Chip text="Film Making & Digital Content Creation" />
+                    <Chip text="Filmmaking & Video Production" />
                   </li>
                   <li>
-                    <Chip text="Children's Media" />
+                    <Chip text="Digital Content Creation & Marketing" />
                   </li>
                 </ul>
               </div>
@@ -267,28 +264,26 @@ export default function HomePage() {
               </div>
               <div className="p-6 pt-4">
                 <h3 className="text-2xl font-bold uppercase text-white mb-2 text-left">
-                  Full Stack Development
+                  Full Stack Web Development
                 </h3>
                 <p className="text-lg font-semibold text-gray-200 mb-4 text-left">
-                  Full Stack Development Structure
+                  Building dynamic web solutions from front to back.
                 </p>
                 <p className="text-sm text-gray-300 leading-relaxed mb-6 text-left">
-                  Unleash your creativity! Share your ideas and projects here.
-                  Keep it concise and engaging. Let&apos;s turn your dreams into
-                  reality!
+                  Master the essential technologies for modern web development. From user interface design to server-side logic and databases, you'll gain comprehensive skills to build robust applications.
                 </p>
                 <h4 className="text-md font-semibold text-gray-200 mb-2 text-left">
                   Categories of Full Stack Development
                 </h4>
                 <ul className="text-sm text-gray-300 list-none p-0 space-y-1 text-left">
                   <li>
-                    <Chip text="Web Development & UI/UX Design" />
+                    <Chip text="Front-end Development (React, Next.js)" />
                   </li>
                   <li>
-                    <Chip text="Video Production & Content Strategy" />
+                    <Chip text="Back-end Development (Node.js, Firebase)" />
                   </li>
                   <li>
-                    <Chip text="Educational Media for Kids" />
+                    <Chip text="UI/UX Design & Prototyping" />
                   </li>
                 </ul>
               </div>
@@ -300,34 +295,32 @@ export default function HomePage() {
                 <div className="absolute inset-0 bg-gradient-to-br from-[#8A2BE2] to-[#FF00FF] opacity-80 rounded-t-xl"></div>
                 <img
                   src="/program-section(card-images)/music.png"
-                  alt="Music Track Illustration"
+                  alt="Worship Music Track Illustration"
                   className="relative z-10 h-full w-full object-cover"
                 />
               </div>
               <div className="p-6 pt-4">
                 <h3 className="text-2xl font-bold uppercase text-white mb-2 text-left">
-                  MUSIC
+                  Worship Music & Production
                 </h3>
                 <p className="text-lg font-semibold text-gray-200 mb-4 text-left">
-                  Music
+                  Developing musical talent for ministry and beyond.
                 </p>
                 <p className="text-sm text-gray-300 leading-relaxed mb-6 text-left">
-                  Unleash your creativity! Present your ideas and projects here.
-                  Keep it concise and engaging. Let&apos;s transform your dreams
-                  into reality!
+                  Explore the creative and technical aspects of contemporary worship music. This track focuses on songwriting, music production, sound engineering, and leading worship in diverse settings.
                 </p>
                 <h4 className="text-md font-semibold text-gray-200 mb-2 text-left">
-                  Categories in Full Stack Engineering
+                  Categories in Worship Music
                 </h4>
                 <ul className="text-sm text-gray-300 list-none p-0 space-y-1 text-left">
                   <li>
-                    <Chip text="Web Development & Interactive Design" />
+                    <Chip text="Songwriting & Composition" />
                   </li>
                   <li>
-                    <Chip text="Content Production & Strategy for Video" />
+                    <Chip text="Music Production & Audio Engineering" />
                   </li>
                   <li>
-                    <Chip text="Educational Media for Young Learners" />
+                    <Chip text="Worship Leading & Performance" />
                   </li>
                 </ul>
               </div>
@@ -342,11 +335,10 @@ export default function HomePage() {
           {/* Left Column: Text Content */}
           <div className="text-left px-4 sm:px-6 lg:px-8 max-w-3xl mx-auto">
             <h2 className="text-4xl md:text-5xl font-extrabold text-[#4F2578] mb-6">
-              How to Join us?
+              How to Join Our Bootcamp?
             </h2>
             <p className="text-lg text-[#6B4F8B] leading-relaxed mb-12">
-              Lorem ipsum dolor sit amet consectetur. Velit laoreet at eget sed
-              ac elit tempus diam urna.
+              Ready to transform your skills and engage with a vibrant community? Here are the key requirements to embark on your journey with Great Commission Ministries Ethiopia's Gara Bootcamp.
             </p>
 
             {/* Criteria List */}
@@ -375,8 +367,7 @@ export default function HomePage() {
                     Church Endorsement
                   </h4>
                   <p className="text-gray-600">
-                    Applicants must submit a letter or confirmation from their
-                    local church (pastor or youth leader).
+                    Applicants must submit a letter or confirmation from their local church (pastor or youth leader).
                   </p>
                 </div>
               </div>
@@ -434,8 +425,7 @@ export default function HomePage() {
                     Skill Level
                   </h4>
                   <p className="text-gray-600">
-                    Beginners to intermediate level - passion is more important
-                    than experience.
+                    Beginners to intermediate level - passion is more important than experience.
                   </p>
                 </div>
               </div>
@@ -476,8 +466,7 @@ export default function HomePage() {
         <div className="relative z-10 bg-white/5 backdrop-blur-lg rounded-[40px] p-8 md:p-12 shadow-xl border border-white/20 max-w-3xl mx-auto flex flex-col md:flex-row items-center justify-between space-y-8 md:space-y-0 md:space-x-12">
           <div className="flex-1 text-center md:text-left">
             <p className="text-xl md:text-2xl text-white font-medium leading-relaxed">
-              Lorem ipsum dolor sit amet consectetur. Tortor pellentesque
-              adipiscing amet orci rhoncus dolor tellus lobortis.
+              Don't miss this opportunity to grow, learn, and make a tangible impact. Join the Gara Bootcamp and become part of a movement equipping digital leaders for God's Kingdom.
             </p>
           </div>
           <a href="https://docs.google.com/forms/d/1lQ5D9oRMk9yPO732pAsr2xnRJY20tFq7aytjp4KOnO4/viewform?ts=684dc925&edit_requested=true&pli=1">
