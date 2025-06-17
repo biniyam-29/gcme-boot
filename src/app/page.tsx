@@ -73,7 +73,7 @@ export default function HomePage() {
     // Main container with background gradient and font styling
     <div className="min-h-screen relative bg-gradient-to-br from-[#1C0033] to-[#0A0014] text-white font-sans overflow-hidden">
       <section
-        className="bg-cover bg-center pt-10 h-screen" // Add h-screen
+        className="bg-cover bg-center pt-10 min-h-screen" // Add h-screen
         style={{ backgroundImage: "url('/images/hero-section/hero-bg.png')" }}
       >
         {/* Navbar - now outside the hero section to control its stickiness independently */}
@@ -119,7 +119,7 @@ export default function HomePage() {
           {" "}
           {/* Attach ref here to measure the hero content */}
           {/* Countdown Banner */}
-          <section className="relative z-10 mt-6 md:mt-16 flex justify-center">
+          <section className="relative z-10 mt-20 md:mt-16 flex justify-center">
             <div className="bg-[#B43CFB]/40 text-white text-sm px-4 py-2 rounded-full backdrop-blur-sm">
               Limited spots available! Apply now to secure your future.
             </div>
@@ -132,7 +132,10 @@ export default function HomePage() {
             </h1>
             {/* Subtext */}
             <p className="mt-6 text-base md:text-lg text-gray-200 max-w-2xl">
-              Unlock your potential in digital media and technology. Our intensive bootcamp offers hands-on training, collaborative projects, and mentorship to equip you for impactful ministry and professional success.
+              Unlock your potential in digital media and technology. Our
+              intensive bootcamp offers hands-on training, collaborative
+              projects, and mentorship to equip you for impactful ministry and
+              professional success.
             </p>
             {/* Date and Arrow Icon */}
             <div className="mt-8 flex items-center space-x-2 text-lg text-gray-300">
@@ -209,7 +212,7 @@ export default function HomePage() {
       </section>
 
       {/* Program Tracks Section */}
-      <section className="relative z-10 py-20 px-4 md:px-16 lg:px-24 h-screen">
+      <section className="relative z-10 py-20 px-4 md:px-16 lg:px-24 min-h-screen">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-extrabold text-white text-left mb-12">
             Program Tracks
@@ -233,7 +236,10 @@ export default function HomePage() {
                   Crafting impactful narratives for a digital world.
                 </p>
                 <p className="text-sm text-gray-300 leading-relaxed mb-6 text-left">
-                  Dive into the art and science of visual and audio communication. This track covers fundamental principles and practical skills for creating compelling media content that resonates with audiences.
+                  Dive into the art and science of visual and audio
+                  communication. This track covers fundamental principles and
+                  practical skills for creating compelling media content that
+                  resonates with audiences.
                 </p>
                 <h4 className="text-md font-semibold text-gray-200 mb-2 text-left">
                   Categories
@@ -270,7 +276,10 @@ export default function HomePage() {
                   Building dynamic web solutions from front to back.
                 </p>
                 <p className="text-sm text-gray-300 leading-relaxed mb-6 text-left">
-                  Master the essential technologies for modern web development. From user interface design to server-side logic and databases, you'll gain comprehensive skills to build robust applications.
+                  Master the essential technologies for modern web development.
+                  From user interface design to server-side logic and databases,
+                  you&apos;ll gain comprehensive skills to build robust
+                  applications.
                 </p>
                 <h4 className="text-md font-semibold text-gray-200 mb-2 text-left">
                   Categories of Full Stack Development
@@ -307,7 +316,10 @@ export default function HomePage() {
                   Developing musical talent for ministry and beyond.
                 </p>
                 <p className="text-sm text-gray-300 leading-relaxed mb-6 text-left">
-                  Explore the creative and technical aspects of contemporary worship music. This track focuses on songwriting, music production, sound engineering, and leading worship in diverse settings.
+                  Explore the creative and technical aspects of contemporary
+                  worship music. This track focuses on songwriting, music
+                  production, sound engineering, and leading worship in diverse
+                  settings.
                 </p>
                 <h4 className="text-md font-semibold text-gray-200 mb-2 text-left">
                   Categories in Worship Music
@@ -330,7 +342,7 @@ export default function HomePage() {
       </section>
 
       {/* Call to Action - Join Us */}
-      <section className="relative z-10 py-20 bg-[#EBE7F3] text-gray-800 overflow-hidden h-screen">
+      <section className="relative z-10 py-20 bg-[#EBE7F3] text-gray-800 overflow-hidden min-h-screen">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Column: Text Content */}
           <div className="text-left px-4 sm:px-6 lg:px-8 max-w-3xl mx-auto">
@@ -338,7 +350,9 @@ export default function HomePage() {
               How to Join Our Bootcamp?
             </h2>
             <p className="text-lg text-[#6B4F8B] leading-relaxed mb-12">
-              Ready to transform your skills and engage with a vibrant community? Here are the key requirements to embark on your journey with Great Commission Ministries Ethiopia's Gara Bootcamp.
+              Ready to transform your skills and engage with a vibrant
+              community? Here are the key requirements to embark on your journey
+              with Great Commission Ministries Ethiopia&apos;s Gara Bootcamp.
             </p>
 
             {/* Criteria List */}
@@ -367,7 +381,8 @@ export default function HomePage() {
                     Church Endorsement
                   </h4>
                   <p className="text-gray-600">
-                    Applicants must submit a letter or confirmation from their local church (pastor or youth leader).
+                    Applicants must submit a letter or confirmation from their
+                    local church (pastor or youth leader).
                   </p>
                 </div>
               </div>
@@ -425,7 +440,8 @@ export default function HomePage() {
                     Skill Level
                   </h4>
                   <p className="text-gray-600">
-                    Beginners to intermediate level - passion is more important than experience.
+                    Beginners to intermediate level - passion is more important
+                    than experience.
                   </p>
                 </div>
               </div>
@@ -460,13 +476,15 @@ export default function HomePage() {
 
       {/* New CTA Section */}
       <section
-        className="relative w-full h-screen flex items-center justify-center bg-cover bg-center overflow-hidden"
+        className="relative w-full min-h-screen flex items-center justify-center bg-cover bg-center overflow-hidden"
         style={{ backgroundImage: "url('/images/cta/cta-bg.png')" }}
       >
         <div className="relative z-10 bg-white/5 backdrop-blur-lg rounded-[40px] p-8 md:p-12 shadow-xl border border-white/20 max-w-3xl mx-auto flex flex-col md:flex-row items-center justify-between space-y-8 md:space-y-0 md:space-x-12">
           <div className="flex-1 text-center md:text-left">
             <p className="text-xl md:text-2xl text-white font-medium leading-relaxed">
-              Don't miss this opportunity to grow, learn, and make a tangible impact. Join the Gara Bootcamp and become part of a movement equipping digital leaders for God's Kingdom.
+              Don&apos;t miss this opportunity to grow, learn, and make a
+              tangible impact. Join the Gara Bootcamp and become part of a
+              movement equipping digital leaders for God&apos;s Kingdom.
             </p>
           </div>
           <a href="https://docs.google.com/forms/d/1lQ5D9oRMk9yPO732pAsr2xnRJY20tFq7aytjp4KOnO4/viewform?ts=684dc925&edit_requested=true&pli=1">
