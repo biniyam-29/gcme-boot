@@ -73,7 +73,7 @@ export default function HomePage() {
     // Main container with background gradient and font styling
     <div className="min-h-screen relative bg-gradient-to-br from-[#1C0033] to-[#0A0014] text-white font-sans overflow-hidden">
       <section
-        className="bg-cover bg-center pt-10" // Add some padding to separate from header slightly
+        className="bg-cover bg-center pt-10 h-screen" // Add h-screen
         style={{ backgroundImage: "url('/images/hero-section/hero-bg.png')" }}
       >
         {/* Navbar - now outside the hero section to control its stickiness independently */}
@@ -163,7 +163,7 @@ export default function HomePage() {
         </div>
 
         {/* Bottom Scrollable Category Chips/Tags - Moved after Hero Main Content */}
-        <section className="relative mt-20 w-full bg-[#8B5CF6]/80 backdrop-blur-lg py-4 overflow-hidden">
+        <section className="relative mt-20 w-full bg-[#8B5CF6]/80 backdrop-blur-lg py-6 overflow-hidden">
           <div className="relative w-full overflow-hidden">
             <div
               className="flex animate-scroll-chips"
@@ -210,7 +210,7 @@ export default function HomePage() {
       </section>
 
       {/* Program Tracks Section */}
-      <section className="relative z-10 py-20 px-4 md:px-16 lg:px-24">
+      <section className="relative z-10 py-20 px-4 md:px-16 lg:px-24 h-screen">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-extrabold text-white text-left mb-12">
             Program Tracks
@@ -337,7 +337,7 @@ export default function HomePage() {
       </section>
 
       {/* Call to Action - Join Us */}
-      <section className="relative z-10 py-20 bg-[#EBE7F3] text-gray-800 overflow-hidden">
+      <section className="relative z-10 py-20 bg-[#EBE7F3] text-gray-800 overflow-hidden h-screen">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Column: Text Content */}
           <div className="text-left px-4 sm:px-6 lg:px-8 max-w-3xl mx-auto">
