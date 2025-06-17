@@ -104,9 +104,11 @@ export default function HomePage() {
               <span>Gara Bootcamp</span>
             </div>
             {/* Register Now button */}
-            <button className="bg-[#DD33FF]/30 hover:bg-[#BF29E6]/30 text-[#DD33FF] font-medium py-2 px-6 rounded-full transition-colors duration-200 shadow-md">
-              Register Now
-            </button>
+            <a href="https://docs.google.com/forms/d/1lQ5D9oRMk9yPO732pAsr2xnRJY20tFq7aytjp4KOnO4/viewform?ts=684dc925&edit_requested=true&pli=1">
+              <button className="bg-[#DD33FF]/30 hover:bg-[#BF29E6]/30 text-[#DD33FF] font-medium py-2 px-6 rounded-full transition-colors duration-200 shadow-md">
+                Register Now
+              </button>
+            </a>
           </div>
         </header>
 
@@ -152,9 +154,11 @@ export default function HomePage() {
               <span>Jul 11 - Aug 22</span>
             </div>
             {/* Call-to-action Button */}
-            <button className="mt-10 bg-[#DD33FF] hover:bg-[#BF29E6] text-white font-semibold py-3 px-8 rounded-full text-lg shadow-lg transition-colors duration-200">
-              Register Now
-            </button>
+            <a href="https://docs.google.com/forms/d/1lQ5D9oRMk9yPO732pAsr2xnRJY20tFq7aytjp4KOnO4/viewform?ts=684dc925&edit_requested=true&pli=1">
+              <button className="mt-10 bg-[#DD33FF] hover:bg-[#BF29E6] text-white font-semibold py-3 px-8 rounded-full text-lg shadow-lg transition-colors duration-200">
+                Register Now
+              </button>
+            </a>
           </main>
         </div>
 
@@ -455,7 +459,7 @@ export default function HomePage() {
               ></div>
 
               <img
-                src="https://media.gettyimages.com/id/1410538853/nl/foto/young-man-in-the-public-park.jpg?s=612x612&w=gi&k=20&c=KimvcKgTLjSC36sTmqmFhughNsjn7DgYMr4hKw4iRZk="
+                src="/images/join-us.png"
                 alt="Smiling person"
                 className="relative z-10 w-full h-full object-cover"
               />
@@ -476,9 +480,11 @@ export default function HomePage() {
               adipiscing amet orci rhoncus dolor tellus lobortis.
             </p>
           </div>
-          <button className="bg-[#7C3AED] hover:bg-[#6A2DD6] text-white font-semibold py-3 px-8 rounded-full text-lg shadow-lg transition-colors duration-200 flex-shrink-0">
-            Register Now
-          </button>
+          <a href="https://docs.google.com/forms/d/1lQ5D9oRMk9yPO732pAsr2xnRJY20tFq7aytjp4KOnO4/viewform?ts=684dc925&edit_requested=true&pli=1">
+            <button className="bg-[#7C3AED] hover:bg-[#6A2DD6] text-white font-semibold py-3 px-8 rounded-full text-lg shadow-lg transition-colors duration-200 flex-shrink-0">
+              Register Now
+            </button>
+          </a>
         </div>
       </section>
       {/* Footer */}
