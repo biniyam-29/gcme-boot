@@ -110,8 +110,6 @@ export default function HomePage() {
           </div>
         </header>
 
-        
-
         {/* Hero Section - now only contains the content that should trigger the fade */}
 
         {/* This main content holds the hero text, countdown, etc. */}
@@ -193,9 +191,6 @@ export default function HomePage() {
               </div>
               {/* A third set to ensure a smooth transition and avoid empty space during the loop */}
               <div className="inline-flex items-center px-6 md:px-16 lg:px-24 space-x-8 flex-shrink-0">
-                <span className="text-gray-400 text-sm md:text-base">
-                  Go to:
-                </span>
                 <Chip text="Full Stack Development" />
                 <Chip text="Photography" />
                 <Chip text="Graphic Design" />
@@ -235,8 +230,9 @@ export default function HomePage() {
                   Media Track Structure
                 </p>
                 <p className="text-sm text-gray-300 leading-relaxed mb-6 text-left">
-                  Ignite your imagination! Share your insights and concepts here.
-                  Keep it brief and captivating. Let's bring your vision to life!
+                  Ignite your imagination! Share your insights and concepts
+                  here. Keep it brief and captivating. Let&apos;s bring your
+                  vision to life!
                 </p>
                 <h4 className="text-md font-semibold text-gray-200 mb-2 text-left">
                   Categories
@@ -274,7 +270,7 @@ export default function HomePage() {
                 </p>
                 <p className="text-sm text-gray-300 leading-relaxed mb-6 text-left">
                   Unleash your creativity! Share your ideas and projects here.
-                  Keep it concise and engaging. Let's turn your dreams into
+                  Keep it concise and engaging. Let&apos;s turn your dreams into
                   reality!
                 </p>
                 <h4 className="text-md font-semibold text-gray-200 mb-2 text-left">
@@ -313,8 +309,8 @@ export default function HomePage() {
                 </p>
                 <p className="text-sm text-gray-300 leading-relaxed mb-6 text-left">
                   Unleash your creativity! Present your ideas and projects here.
-                  Keep it concise and engaging. Let's transform your dreams into
-                  reality!
+                  Keep it concise and engaging. Let&apos;s transform your dreams
+                  into reality!
                 </p>
                 <h4 className="text-md font-semibold text-gray-200 mb-2 text-left">
                   Categories in Full Stack Engineering
