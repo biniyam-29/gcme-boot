@@ -1,6 +1,6 @@
 "use client"; // This directive marks the component as a Client Component
 
-import { useEffect, useRef, useState } from "react";
+import { useRef} from "react";
 
 // Reusable Chip component for the bottom section
 // This component displays a small colored dot next to text,
@@ -18,69 +18,26 @@ function Chip({ text }: { text: string }) {
 }
 
 export default function HomePage() {
-  const [headerOpacity, setHeaderOpacity] = useState(1);
+  // Removed headerOpacity state as it's no longer needed for fading
+  // const [headerOpacity, setHeaderOpacity] = useState(1);
   // Ref for the content *below* the sticky header to determine fade point
   const heroContentRef = useRef<HTMLDivElement>(null);
   const headerRef = useRef<HTMLElement>(null); // Ref for the header itself to get its height
 
-  useEffect(() => {
-    const handleScroll = () => {
-      // Ensure both refs exist
-      if (!heroContentRef.current || !headerRef.current) return;
-
-      const headerHeight = headerRef.current.offsetHeight; // Get the actual height of the header
-      const heroRect = heroContentRef.current.getBoundingClientRect();
-
-      // The scroll point where the hero content is fully out of view (or just its top is at the header's bottom)
-      // We want the fade to start when the *top* of the hero content aligns with the *bottom* of the header.
-      // So, fadeStart should be when the heroContentRef.top is equal to headerHeight.
-      // Since heroRect.top becomes negative as we scroll up, we use -heroRect.top for scrollY.
-      // The fade will start when -heroRect.top = 0 (when hero content is at the very top of viewport)
-      // or adjusted for header height.
-      const scrollY = window.scrollY; // Use window.scrollY for overall scroll position
-
-      // Calculate the point where the hero section (excluding the header) has scrolled past the viewport top
-      // This is the point where the top of the heroContentRef is above the top of the viewport.
-      const heroContentTop = heroRect.top + window.scrollY;
-
-      // We want the header to fade out as the bottom of the hero content scrolls past the top of the viewport
-      const fadeStartScrollPos =
-        heroContentTop + heroRect.height - headerHeight;
-      const fadeEndScrollPos = fadeStartScrollPos + 100; // Fade out over the next 100px
-
-      if (scrollY <= fadeStartScrollPos) {
-        setHeaderOpacity(1); // Fully visible
-      } else if (scrollY >= fadeEndScrollPos) {
-        setHeaderOpacity(0); // Fully invisible
-      } else {
-        // Calculate opacity based on scroll position within the fade zone
-        setHeaderOpacity(
-          1 -
-            (scrollY - fadeStartScrollPos) /
-              (fadeEndScrollPos - fadeStartScrollPos)
-        );
-      }
-    };
-
-    // Add scroll event listener when the component mounts
-    window.addEventListener("scroll", handleScroll, { passive: true });
-
-    // Clean up the event listener when the component unmounts
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []); // Empty dependency array ensures this effect runs only once on mount
+  // Removed useEffect that handled scroll for header opacity
 
   return (
     // Main container with background gradient and font styling
     <div className="min-h-screen relative bg-gradient-to-br from-[#1C0033] to-[#0A0014] text-white font-sans overflow-hidden">
       <section
-        className="bg-cover bg-center pt-10 min-h-screen" // Add h-screen
+        className="bg-cover bg-center pt-10 min-h-screen relative" // Add h-screen
         style={{ backgroundImage: "url('/images/hero-section/hero-bg.png')" }}
       >
         {/* Navbar - now outside the hero section to control its stickiness independently */}
         <header
           ref={headerRef} // Attach ref to header to get its height
           className="fixed w-full top-0 z-30 pt-6 px-4 md:px-16 lg:px-24 transition-opacity duration-500"
-          style={{ opacity: headerOpacity }} // Apply dynamic opacity here
+          // Removed style={{ opacity: headerOpacity }} as header should always be visible
         >
           {/* Pill-shaped container for the nav elements */}
           <div className="mx-auto max-w-[800px] bg-[#2F0A4A]/70 backdrop-blur-md rounded-full py-3 px-8 flex items-center justify-between shadow-lg">
@@ -128,7 +85,7 @@ export default function HomePage() {
           <main className="relative z-10 flex flex-col items-center text-center mt-16 md:mt-24 px-4 md:px-16 lg:px-24">
             {/* Large Heading */}
             <h1 className="text-2xl md:text-4xl lg:text-5xl font-extrabold leading-tight tracking-wide max-w-4xl">
-              Gara Bootcamp by Great Commission Ministries Ethiopia
+              Gara Missional Bootcamp by Great Commission Ministries Ethiopia
             </h1>
             {/* Subtext */}
             <p className="mt-6 text-base md:text-lg text-gray-200 max-w-2xl">
@@ -165,7 +122,7 @@ export default function HomePage() {
         </div>
 
         {/* Bottom Scrollable Category Chips/Tags - Moved after Hero Main Content */}
-        <section className="relative mt-20 w-full bg-[#8B5CF6]/80 backdrop-blur-lg py-6 overflow-hidden">
+        <section className="absolute bottom-0 mt-20 w-full bg-[#8B5CF6]/80 backdrop-blur-lg py-6 overflow-hidden">
           <div className="relative w-full overflow-hidden">
             <div
               className="flex animate-scroll-chips"
