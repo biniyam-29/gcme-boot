@@ -1,6 +1,7 @@
 "use client"; // This directive marks the component as a Client Component
 
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
+import Image from "next/image";
 
 // Reusable Chip component for the bottom section
 // This component displays a small colored dot next to text,
@@ -186,7 +187,7 @@ export default function HomePage() {
             <div className="bg-[#1A002C] rounded-xl p-0 shadow-2xl flex flex-col overflow-hidden">
               <div className="relative h-56 w-full rounded-t-xl overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-br from-[#8A2BE2] to-[#FF00FF] opacity-80 rounded-t-xl"></div>
-                <img
+                <Image
                   src="/program-section(card-images)/media.png"
                   alt="Digital Media Track Illustration"
                   className="relative z-10 h-full w-full object-cover"
@@ -226,7 +227,7 @@ export default function HomePage() {
             <div className="bg-[#1A002C] rounded-xl p-0 shadow-2xl flex flex-col overflow-hidden">
               <div className="relative h-56 w-full rounded-t-xl overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-br from-[#8A2BE2] to-[#FF00FF] opacity-80 rounded-t-xl"></div>
-                <img
+                <Image
                   src="/program-section(card-images)/development.png"
                   alt="Full Stack Development Track Illustration"
                   className="relative z-10 h-full w-full object-cover"
@@ -266,7 +267,7 @@ export default function HomePage() {
             <div className="bg-[#1A002C] rounded-xl p-0 shadow-2xl flex flex-col overflow-hidden">
               <div className="relative h-56 w-full rounded-t-xl overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-br from-[#8A2BE2] to-[#FF00FF] opacity-80 rounded-t-xl"></div>
-                <img
+                <Image
                   src="/program-section(card-images)/music.png"
                   alt="Worship Music Track Illustration"
                   className="relative z-10 h-full w-full object-cover"
@@ -429,7 +430,7 @@ export default function HomePage() {
                 }}
               ></div>
 
-              <img
+              <Image
                 src="/images/join-us.png"
                 alt="Smiling person"
                 className="relative z-10 w-full h-full object-cover"
