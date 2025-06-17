@@ -191,6 +191,8 @@ export default function HomePage() {
                   src="/program-section(card-images)/media.png"
                   alt="Digital Media Track Illustration"
                   className="relative z-10 h-full w-full object-cover"
+                  width={400} // <-- Add an appropriate width
+                  height={300}
                 />
               </div>
               <div className="p-6 pt-4">
@@ -231,6 +233,8 @@ export default function HomePage() {
                   src="/program-section(card-images)/development.png"
                   alt="Full Stack Development Track Illustration"
                   className="relative z-10 h-full w-full object-cover"
+                  width={400} // <-- Add an appropriate width
+                  height={300}
                 />
               </div>
               <div className="p-6 pt-4">
@@ -271,6 +275,8 @@ export default function HomePage() {
                   src="/program-section(card-images)/music.png"
                   alt="Worship Music Track Illustration"
                   className="relative z-10 h-full w-full object-cover"
+                  width={400} // <-- Add an appropriate width
+                  height={300}
                 />
               </div>
               <div className="p-6 pt-4">
@@ -434,6 +440,8 @@ export default function HomePage() {
                 src="/images/join-us.png"
                 alt="Smiling person"
                 className="relative z-10 w-full h-full object-cover"
+                width={400} // <-- Add an appropriate width
+                height={300}
               />
             </div>
           </div>
