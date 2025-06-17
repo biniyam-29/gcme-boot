@@ -1,16 +1,14 @@
 "use client"; // This directive marks the component as a Client Component
 
 import { useRef } from "react";
-import Image from "next/image";
+import Image from "next/image"; 
 
-// Reusable Chip component for the bottom section
+
 // This component displays a small colored dot next to text,
-// mimicking the category tags in the design.
 function Chip({ text }: { text: string }) {
   return (
     <div className="flex items-center space-x-2 text-white text-sm md:text-base">
       {/* Small purple dot */}
-      {/* Adjusted dot color to match button color. */}
       <span className="w-2 h-2 bg-[#DD33FF] rounded-full flex-shrink-0"></span>
       {/* Chip text */}
       <span>{text}</span>
@@ -19,17 +17,24 @@ function Chip({ text }: { text: string }) {
 }
 
 export default function HomePage() {
-  // Removed headerOpacity state as it's no longer needed for fading
-  // const [headerOpacity, setHeaderOpacity] = useState(1);
-  // Ref for the content *below* the sticky header to determine fade point
   const heroContentRef = useRef<HTMLDivElement>(null);
   const headerRef = useRef<HTMLElement>(null); // Ref for the header itself to get its height
 
-  // Removed useEffect that handled scroll for header opacity
+
+  // Define the list of chips once
+  const allChips = [
+    "Full Stack Development",
+    "Photography",
+    "Graphic Design",
+    "Film making",
+    "Digital Content Creation",
+    "Children's Media",
+    "Front End",
+    "Story Telling",
+  ];
 
   return (
     // Main container with background gradient and font styling
-    // Changed font-sans to use Plus Jakarta Sans
     <div className="min-h-screen relative bg-gradient-to-br from-[#1C0033] to-[#0A0014] text-white font-sans overflow-hidden">
       <section
         className="bg-cover bg-center pt-10 min-h-screen relative" // Add h-screen
@@ -39,11 +44,8 @@ export default function HomePage() {
         <header
           ref={headerRef} // Attach ref to header to get its height
           className="fixed w-full top-0 z-30 pt-6 px-4 md:px-16 lg:px-24 transition-opacity duration-500"
-          // Removed style={{ opacity: headerOpacity }} as header should always be visible
         >
           {/* Pill-shaped container for the nav elements */}
-          {/* Changed max-w-[800px] to max-w-7xl for consistent width */}
-          {/* Added border and border-white/20 for a lighter border */}
           <div className="mx-auto max-w-7xl bg-[#2F0A4A]/70 backdrop-blur-md rounded-full py-3 px-8 flex items-center justify-between shadow-lg border border-white/20">
             {/* Logo and text */}
             <div className="flex items-center space-x-2 text-lg font-semibold">
@@ -73,33 +75,26 @@ export default function HomePage() {
           </div>
         </header>
 
-        {/* Hero Section - now only contains the content that should trigger the fade */}
-
-        {/* This main content holds the hero text, countdown, etc. */}
-        {/* Added max-w-7xl and mx-auto to this div for consistent width across the hero section content */}
         <div ref={heroContentRef} className="max-w-7xl mx-auto">
           {" "}
-          {/* Attach ref here to measure the hero content */}
-          {/* Countdown Banner */}
           <section className="relative z-10 mt-20 md:mt-16 flex justify-center">
             <div className="bg-[#B43CFB]/40 text-white text-sm px-4 py-2 rounded-full backdrop-blur-sm">
               Limited spots available! Apply now to secure your future.
             </div>
           </section>
           {/* Hero Main Content */}
-          {/* Kept max-w-7xl and mx-auto here, it now applies to the inner content relative to its parent */}
           <main className="relative z-10 flex flex-col items-center text-center mt-16 md:mt-24 px-4 md:px-16 lg:px-24">
-            {/* Large Heading - Removed max-w-4xl to allow it to expand to max-w-7xl of its parent */}
             <h1 className="text-2xl md:text-4xl lg:text-5xl font-extrabold leading-tight tracking-wide">
-              Gara Bootcamp by Great Commission Ministries Ethiopia
+              Gara Missional Bootcamp by Great Commission Ministries Ethiopia
             </h1>
-            {/* Subtext - Removed max-w-2xl to allow it to expand to max-w-7xl of its parent */}
-            <p className="mt-6 text-base md:text-lg text-gray-200">
+
+            <p className="mt-9 text-base md:text-lg text-gray-200">
               Unlock your potential in digital media and technology. Our
               intensive bootcamp offers hands-on training, collaborative
               projects, and mentorship to equip you for impactful ministry and
               professional success.
             </p>
+
             {/* Date and Arrow Icon */}
             <div className="mt-8 flex items-center space-x-2 text-lg text-gray-300">
               <svg
@@ -118,6 +113,7 @@ export default function HomePage() {
               </svg>
               <span>Jul 11 - Aug 22</span>
             </div>
+
             {/* Call-to-action Button */}
             <a href="https://docs.google.com/forms/d/1lQ5D9oRMk9yPO732pAsr2xnRJY20tFq7aytjp4KOnO4/viewform?ts=684dc925&edit_requested=true&pli=1">
               <button className="mt-10 bg-[#DD33FF] hover:bg-[#BF29E6] text-white font-semibold py-3 px-8 rounded-full text-lg shadow-lg transition-colors duration-200">
@@ -127,48 +123,23 @@ export default function HomePage() {
           </main>
         </div>
 
-        {/* Bottom Scrollable Category Chips/Tags - Moved after Hero Main Content */}
-        {/* Added shadow-2xl and shadow-black for the black shadow effect */}
-        <section className="absolute bottom-0 mt-20 w-full bg-[#8B5CF6]/80 backdrop-blur-lg py-6 overflow-hidden shadow-2xl shadow-black">
-          <div className="relative w-full overflow-hidden">
+        {/* Bottom Category Chips/Tags */}
+        <section className="absolute bottom-0 mt-20 w-full bg-[#8B5CF6]/80 backdrop-blur-lg py-6 shadow-2xl shadow-black">
+          <div className="relative w-full overflow-hidden px-4 md:px-16 lg:px-24">
             <div
               className="flex animate-scroll-chips"
               style={{ animationDuration: "40s" }}
             >
               {" "}
-              {/* Adjusted duration for smoother scroll */}
-              {/* First set of chips */}
-              <div className="inline-flex items-center px-6 md:px-16 lg:px-24 space-x-8 flex-shrink-0">
-                <Chip text="Full Stack Development" />
-                <Chip text="Photography" />
-                <Chip text="Graphic Design" />
-                <Chip text="Film making" />
-                <Chip text="Digital Content Creation" />
-                <Chip text="Children's Media" />
-                <Chip text="Front End" />
-                <Chip text="Story Telling" />
+              <div className="inline-flex items-center space-x-8 flex-shrink-0">
+                {allChips.map((chip, index) => (
+                  <Chip key={`chip-1-${index}`} text={chip} />
+                ))}
               </div>
-              {/* Duplicate set of chips to enable continuous loop */}
-              <div className="inline-flex items-center px-6 md:px-16 lg:px-24 space-x-8 flex-shrink-0">
-                <Chip text="Full Stack Development" />
-                <Chip text="Photography" />
-                <Chip text="Graphic Design" />
-                <Chip text="Film making" />
-                <Chip text="Digital Content Creation" />
-                <Chip text="Children's Media" />
-                <Chip text="Front End" />
-                <Chip text="Story Telling" />
-              </div>
-              {/* A third set to ensure a smooth transition and avoid empty space during the loop */}
-              <div className="inline-flex items-center px-6 md:px-16 lg:px-24 space-x-8 flex-shrink-0">
-                <Chip text="Full Stack Development" />
-                <Chip text="Photography" />
-                <Chip text="Graphic Design" />
-                <Chip text="Film making" />
-                <Chip text="Digital Content Creation" />
-                <Chip text="Children's Media" />
-                <Chip text="Front End" />
-                <Chip text="Story Telling" />
+              <div className="inline-flex items-center space-x-8 flex-shrink-0">
+                {allChips.map((chip, index) => (
+                  <Chip key={`chip-2-${index}`} text={chip} />
+                ))}
               </div>
             </div>
           </div>
@@ -177,21 +148,20 @@ export default function HomePage() {
 
       {/* Program Tracks Section */}
       <section className="relative z-10 py-20 px-4 md:px-16 lg:px-24 min-h-screen">
-        {/* max-w-7xl and mx-auto are already correctly applied here */}
         <div className="max-w-7xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-extrabold text-white text-left mb-12">
             Program Tracks
           </h2>
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Card 1: Media */}
             <div className="bg-[#1A002C] rounded-xl p-0 shadow-2xl flex flex-col overflow-hidden">
               <div className="relative h-56 w-full rounded-t-xl overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-[#8A2BE2] to-[#FF00FF] opacity-80 rounded-t-xl"></div>
                 <Image
                   src="/program-section(card-images)/media.png"
                   alt="Digital Media Track Illustration"
                   className="relative z-10 h-full w-full object-cover"
-                  width={400} // <-- Add an appropriate width
+                  width={400}
                   height={300}
                 />
               </div>
@@ -228,12 +198,11 @@ export default function HomePage() {
             {/* Card 2: Full Stack Development */}
             <div className="bg-[#1A002C] rounded-xl p-0 shadow-2xl flex flex-col overflow-hidden">
               <div className="relative h-56 w-full rounded-t-xl overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-[#8A2BE2] to-[#FF00FF] opacity-80 rounded-t-xl"></div>
                 <Image
                   src="/program-section(card-images)/development.png"
                   alt="Full Stack Development Track Illustration"
                   className="relative z-10 h-full w-full object-cover"
-                  width={400} // <-- Add an appropriate width
+                  width={400} 
                   height={300}
                 />
               </div>
@@ -270,12 +239,11 @@ export default function HomePage() {
             {/* Card 3: Music */}
             <div className="bg-[#1A002C] rounded-xl p-0 shadow-2xl flex flex-col overflow-hidden">
               <div className="relative h-56 w-full rounded-t-xl overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-[#8A2BE2] to-[#FF00FF] opacity-80 rounded-t-xl"></div>
                 <Image
                   src="/program-section(card-images)/music.png"
                   alt="Worship Music Track Illustration"
                   className="relative z-10 h-full w-full object-cover"
-                  width={400} // <-- Add an appropriate width
+                  width={400} 
                   height={300}
                 />
               </div>
@@ -314,7 +282,6 @@ export default function HomePage() {
 
       {/* Call to Action - Join Us */}
       <section className="relative z-10 py-20 bg-[#EBE7F3] text-gray-800 overflow-hidden min-h-screen">
-        {/* max-w-7xl and mx-auto are already correctly applied here */}
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Column: Text Content */}
           <div className="text-left px-4 sm:px-6 lg:px-8 max-w-3xl mx-auto">
@@ -393,7 +360,7 @@ export default function HomePage() {
                 {/* Icon Circle */}
                 <div className="flex-shrink-0 w-12 h-12 bg-[#7C3AED] rounded-full flex items-center justify-center">
                   <svg
-                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns="http://www.w3.org/2000/24"
                     fill="none"
                     viewBox="0 0 24 24"
                     strokeWidth={1.5}
@@ -440,7 +407,7 @@ export default function HomePage() {
                 src="/images/join-us.png"
                 alt="Smiling person"
                 className="relative z-10 w-full h-full object-cover"
-                width={400} // <-- Add an appropriate width
+                width={400}
                 height={300}
               />
             </div>
@@ -450,14 +417,13 @@ export default function HomePage() {
 
       {/* New CTA Section */}
       <section
-        className="relative w-full py-20 min-h-screen flex items-center justify-center bg-cover bg-center overflow-hidden" // Added py-20 for top and bottom margin
+        className="relative w-full py-20 min-h-screen flex items-center justify-center bg-cover bg-center overflow-hidden"
         style={{
           backgroundImage: "url('/images/cta/cta-bg.png')",
           backgroundSize: "110% auto", // Slightly larger than auto to allow it to pass the content div a little vertically
           backgroundPosition: "center", // Center the background image
         }}
       >
-        {/* Changed max-w-3xl to max-w-7xl to match the width of the "Call to Action - Join Us" section on larger screens */}
         <div className="relative z-10 bg-white/5 backdrop-blur-lg rounded-[40px] p-8 md:p-12 shadow-xl border border-white/20 max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between space-y-8 md:space-y-0 md:space-x-12">
           <div className="flex-1 text-center md:text-left">
             <p className="text-xl md:text-2xl text-white font-medium leading-relaxed">
@@ -473,6 +439,7 @@ export default function HomePage() {
           </a>
         </div>
       </section>
+
       {/* Footer */}
       <footer className="relative z-10 py-6 bg-[#0A0014] text-gray-400 text-sm flex flex-col md:flex-row items-center justify-between px-4 md:px-16 lg:px-24">
         <div className="mb-2 md:mb-0">GARA BOOTCAMP</div>
@@ -528,8 +495,8 @@ export default function HomePage() {
             transform: translateX(0%);
           }
           to {
-            /* Translate by 2/3 of the duplicated content width to create a seamless loop */
-            transform: translateX(-66.66%);
+            /* This is now correct, translating exactly half the width of the duplicated content */
+            transform: translateX(-50%);
           }
         }
         .animate-scroll-chips {
