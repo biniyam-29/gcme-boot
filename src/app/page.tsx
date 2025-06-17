@@ -1,6 +1,6 @@
 "use client"; // This directive marks the component as a Client Component
 
-import { useRef} from "react";
+import { useEffect, useRef, useState } from "react";
 
 // Reusable Chip component for the bottom section
 // This component displays a small colored dot next to text,
@@ -28,6 +28,7 @@ export default function HomePage() {
 
   return (
     // Main container with background gradient and font styling
+    // Changed font-sans to use Plus Jakarta Sans
     <div className="min-h-screen relative bg-gradient-to-br from-[#1C0033] to-[#0A0014] text-white font-sans overflow-hidden">
       <section
         className="bg-cover bg-center pt-10 min-h-screen relative" // Add h-screen
@@ -40,7 +41,9 @@ export default function HomePage() {
           // Removed style={{ opacity: headerOpacity }} as header should always be visible
         >
           {/* Pill-shaped container for the nav elements */}
-          <div className="mx-auto max-w-[800px] bg-[#2F0A4A]/70 backdrop-blur-md rounded-full py-3 px-8 flex items-center justify-between shadow-lg">
+          {/* Changed max-w-[800px] to max-w-7xl for consistent width */}
+          {/* Added border and border-white/20 for a lighter border */}
+          <div className="mx-auto max-w-7xl bg-[#2F0A4A]/70 backdrop-blur-md rounded-full py-3 px-8 flex items-center justify-between shadow-lg border border-white/20">
             {/* Logo and text */}
             <div className="flex items-center space-x-2 text-lg font-semibold">
               {/* House icon (representing the 'Gara Bootcamp' logo) */}
@@ -72,7 +75,8 @@ export default function HomePage() {
         {/* Hero Section - now only contains the content that should trigger the fade */}
 
         {/* This main content holds the hero text, countdown, etc. */}
-        <div ref={heroContentRef}>
+        {/* Added max-w-7xl and mx-auto to this div for consistent width across the hero section content */}
+        <div ref={heroContentRef} className="max-w-7xl mx-auto">
           {" "}
           {/* Attach ref here to measure the hero content */}
           {/* Countdown Banner */}
@@ -82,13 +86,14 @@ export default function HomePage() {
             </div>
           </section>
           {/* Hero Main Content */}
+          {/* Kept max-w-7xl and mx-auto here, it now applies to the inner content relative to its parent */}
           <main className="relative z-10 flex flex-col items-center text-center mt-16 md:mt-24 px-4 md:px-16 lg:px-24">
-            {/* Large Heading */}
-            <h1 className="text-2xl md:text-4xl lg:text-5xl font-extrabold leading-tight tracking-wide max-w-4xl">
-              Gara Missional Bootcamp by Great Commission Ministries Ethiopia
+            {/* Large Heading - Removed max-w-4xl to allow it to expand to max-w-7xl of its parent */}
+            <h1 className="text-2xl md:text-4xl lg:text-5xl font-extrabold leading-tight tracking-wide">
+              Gara Bootcamp by Great Commission Ministries Ethiopia
             </h1>
-            {/* Subtext */}
-            <p className="mt-6 text-base md:text-lg text-gray-200 max-w-2xl">
+            {/* Subtext - Removed max-w-2xl to allow it to expand to max-w-7xl of its parent */}
+            <p className="mt-6 text-base md:text-lg text-gray-200">
               Unlock your potential in digital media and technology. Our
               intensive bootcamp offers hands-on training, collaborative
               projects, and mentorship to equip you for impactful ministry and
@@ -122,7 +127,8 @@ export default function HomePage() {
         </div>
 
         {/* Bottom Scrollable Category Chips/Tags - Moved after Hero Main Content */}
-        <section className="absolute bottom-0 mt-20 w-full bg-[#8B5CF6]/80 backdrop-blur-lg py-6 overflow-hidden">
+        {/* Added shadow-2xl and shadow-black for the black shadow effect */}
+        <section className="absolute bottom-0 mt-20 w-full bg-[#8B5CF6]/80 backdrop-blur-lg py-6 overflow-hidden shadow-2xl shadow-black">
           <div className="relative w-full overflow-hidden">
             <div
               className="flex animate-scroll-chips"
@@ -170,7 +176,8 @@ export default function HomePage() {
 
       {/* Program Tracks Section */}
       <section className="relative z-10 py-20 px-4 md:px-16 lg:px-24 min-h-screen">
-        <div className="max-w-6xl mx-auto">
+        {/* max-w-7xl and mx-auto are already correctly applied here */}
+        <div className="max-w-7xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-extrabold text-white text-left mb-12">
             Program Tracks
           </h2>
@@ -300,6 +307,7 @@ export default function HomePage() {
 
       {/* Call to Action - Join Us */}
       <section className="relative z-10 py-20 bg-[#EBE7F3] text-gray-800 overflow-hidden min-h-screen">
+        {/* max-w-7xl and mx-auto are already correctly applied here */}
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Column: Text Content */}
           <div className="text-left px-4 sm:px-6 lg:px-8 max-w-3xl mx-auto">
@@ -433,10 +441,15 @@ export default function HomePage() {
 
       {/* New CTA Section */}
       <section
-        className="relative w-full min-h-screen flex items-center justify-center bg-cover bg-center overflow-hidden"
-        style={{ backgroundImage: "url('/images/cta/cta-bg.png')" }}
+        className="relative w-full py-20 min-h-screen flex items-center justify-center bg-cover bg-center overflow-hidden" // Added py-20 for top and bottom margin
+        style={{
+          backgroundImage: "url('/images/cta/cta-bg.png')",
+          backgroundSize: "110% auto", // Slightly larger than auto to allow it to pass the content div a little vertically
+          backgroundPosition: "center", // Center the background image
+        }}
       >
-        <div className="relative z-10 bg-white/5 backdrop-blur-lg rounded-[40px] p-8 md:p-12 shadow-xl border border-white/20 max-w-3xl mx-auto flex flex-col md:flex-row items-center justify-between space-y-8 md:space-y-0 md:space-x-12">
+        {/* Changed max-w-3xl to max-w-7xl to match the width of the "Call to Action - Join Us" section on larger screens */}
+        <div className="relative z-10 bg-white/5 backdrop-blur-lg rounded-[40px] p-8 md:p-12 shadow-xl border border-white/20 max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between space-y-8 md:space-y-0 md:space-x-12">
           <div className="flex-1 text-center md:text-left">
             <p className="text-xl md:text-2xl text-white font-medium leading-relaxed">
               Don&apos;t miss this opportunity to grow, learn, and make a
@@ -491,8 +504,16 @@ export default function HomePage() {
         <div className="absolute top-0 left-0 right-0 h-[100px] bg-gradient-to-b from-[#1C0033]/80 to-transparent"></div>
       </div>
 
-      {/* Custom CSS for the scrolling animation */}
+      {/* Custom CSS for the scrolling animation and font import */}
       <style>{`
+        /* Import Plus Jakarta Sans font */
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap');
+
+        /* Apply Plus Jakarta Sans to the body or main container */
+        body, .font-sans {
+          font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
         @keyframes scrollChips {
           from {
             transform: translateX(0%);
