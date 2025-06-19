@@ -1,8 +1,7 @@
 "use client"; // This directive marks the component as a Client Component
 
 import { useRef } from "react";
-import Image from "next/image"; 
-
+import Image from "next/image";
 
 // This component displays a small colored dot next to text,
 function Chip({ text }: { text: string }) {
@@ -19,7 +18,6 @@ function Chip({ text }: { text: string }) {
 export default function HomePage() {
   const heroContentRef = useRef<HTMLDivElement>(null);
   const headerRef = useRef<HTMLElement>(null); // Ref for the header itself to get its height
-
 
   // Define the list of chips once
   const allChips = [
@@ -67,7 +65,7 @@ export default function HomePage() {
               <span>Gara Bootcamp</span>
             </div>
             {/* Register Now button */}
-            <a href="https://docs.google.com/forms/d/1lQ5D9oRMk9yPO732pAsr2xnRJY20tFq7aytjp4KOnO4/viewform?ts=684dc925&edit_requested=true&pli=1">
+            <a href="/register">
               <button className="bg-[#DD33FF]/30 hover:bg-[#BF29E6]/30 text-[#DD33FF] font-medium py-2 px-6 rounded-full transition-colors duration-200 shadow-md">
                 Register Now
               </button>
@@ -115,7 +113,7 @@ export default function HomePage() {
             </div>
 
             {/* Call-to-action Button */}
-            <a href="https://docs.google.com/forms/d/1lQ5D9oRMk9yPO732pAsr2xnRJY20tFq7aytjp4KOnO4/viewform?ts=684dc925&edit_requested=true&pli=1">
+            <a href="/register">
               <button className="mt-10 bg-[#DD33FF] hover:bg-[#BF29E6] text-white font-semibold py-3 px-8 rounded-full text-lg shadow-lg transition-colors duration-200">
                 Register Now
               </button>
@@ -202,7 +200,7 @@ export default function HomePage() {
                   src="/program-section(card-images)/development.png"
                   alt="Full Stack Development Track Illustration"
                   className="relative z-10 h-full w-full object-cover"
-                  width={400} 
+                  width={400}
                   height={300}
                 />
               </div>
@@ -243,7 +241,7 @@ export default function HomePage() {
                   src="/program-section(card-images)/music.png"
                   alt="Worship Music Track Illustration"
                   className="relative z-10 h-full w-full object-cover"
-                  width={400} 
+                  width={400}
                   height={300}
                 />
               </div>
@@ -432,7 +430,7 @@ export default function HomePage() {
               movement equipping digital leaders for God&apos;s Kingdom.
             </p>
           </div>
-          <a href="https://docs.google.com/forms/d/1lQ5D9oRMk9yPO732pAsr2xnRJY20tFq7aytjp4KOnO4/viewform?ts=684dc925&edit_requested=true&pli=1">
+          <a href="/register">
             <button className="bg-[#7C3AED] hover:bg-[#6A2DD6] text-white font-semibold py-3 px-8 rounded-full text-lg shadow-lg transition-colors duration-200 flex-shrink-0">
               Register Now
             </button>
