@@ -1,36 +1,121 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Gara Bootcamp Registration & Landing Page
 
-## Getting Started
+A modern, visually creative registration and information site for the Gara Missional Bootcamp by Great Commission Ministries Ethiopia.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 🚀 Project Overview
+This project is a Next.js 15 web application designed to:
+- Present information about the Gara Bootcamp and its tracks (Development, Media, Music)
+- Allow users to register for the bootcamp with a beautiful, multi-step, category-specific form
+- Provide a seamless, engaging, and mobile-friendly user experience
+
+---
+
+## ✨ Features
+- **Fully Custom Registration Flow**: Users select a track, then answer tailored questions for Development, Media, or Music.
+- **Basic Information Section**: All users fill out a creative, required personal info section.
+- **Category-Specific Questions**: Each track has its own set of detailed, relevant questions.
+- **Modern, Animated UI**: Creative use of gradients, cards, icons, and micro-interactions.
+- **Component-Based Architecture**: All major sections and form parts are modular React components for easy maintenance and extension.
+- **Production-Ready**: Linted, type-checked, and optimized for deployment.
+
+---
+
+## 🛠️ Tech Stack
+- **Framework**: [Next.js 15 (App Router)](https://nextjs.org/)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **UI**: React, custom components, [react-icons](https://react-icons.github.io/react-icons/)
+- **Image Optimization**: next/image
+
+---
+
+## 📁 Folder Structure
+```
+gcme-boot/
+├── public/                  # Static assets (images, icons, etc.)
+├── src/
+│   └── app/
+│       ├── components/      # All major landing page sections as components
+│       │   ├── Navbar.tsx
+│       │   ├── HeroSection.tsx
+│       │   ├── ChipsScroller.tsx
+│       │   ├── ProgramTracks.tsx
+│       │   ├── JoinUsSection.tsx
+│       │   ├── CTASection.tsx
+│       │   ├── Footer.tsx
+│       │   └── BackgroundWaves.tsx
+│       ├── register/
+│       │   ├── components/  # Registration form components
+│       │   │   ├── BasicInfoForm.tsx
+│       │   │   ├── DevelopmentForm.tsx
+│       │   │   ├── MediaForm.tsx
+│       │   │   ├── MusicForm.tsx
+│       │   │   └── ...
+│       │   ├── types.ts     # Shared types for registration forms
+│       │   └── page.tsx     # Registration page (multi-step form)
+│       ├── page.tsx         # Main landing page (uses all home components)
+│       └── ...
+├── package.json
+├── tsconfig.json
+├── tailwind.config.js
+└── README.md
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🧑‍💻 Local Development
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. **Install dependencies:**
+   ```bash
+   npm install --legacy-peer-deps
+   ```
+2. **Run the development server:**
+   ```bash
+   npm run dev
+   ```
+   The app will be available at [http://localhost:3000](http://localhost:3000)
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 🏗️ Building for Production
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. **Build the app:**
+   ```bash
+   npm run build
+   ```
+2. **Start the production server:**
+   ```bash
+   npm start
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 📝 How to Add or Edit Registration Questions
+- **Basic Info Questions:**
+  - Edit the `basicInfoQuestions` array in `src/app/register/page.tsx`.
+- **Category-Specific Questions:**
+  - Edit the question arrays in:
+    - `src/app/register/components/DevelopmentForm.tsx`
+    - `src/app/register/components/MediaForm.tsx`
+    - `src/app/register/components/MusicForm.tsx`
+- **Question Type:**
+  - Each question supports `type: 'radio' | 'checkbox' | 'textarea' | 'text'` and can have `options` for radio/checkbox.
+- **Validation:**
+  - All questions with `required: true` must be answered before submission.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📣 Credits & License
+- Gara Bootcamp by Great Commission Ministries Ethiopia
+- UI/UX and code by your development team (and AI assistant!)
+- Licensed under MIT (or your preferred license)
+
+---
+
+## 💡 Tips
+- The registration form is fully modular—add new tracks or questions easily!
+- To connect to a backend or Google Form, add a submission handler in `src/app/register/page.tsx`.
+- All styles are in Tailwind; customize in `globals.css` or component files.
+
