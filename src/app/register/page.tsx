@@ -380,6 +380,48 @@ const questions: Record<string, Question[]> = {
   ],
 };
 
+// Add a type for the basic info questions
+const basicInfoQuestions: Question[] = [
+  { label: "Name", name: "name", type: "text", required: true },
+  { label: "Age", name: "age", type: "text", required: true },
+  {
+    label: "Gender",
+    name: "gender",
+    type: "radio",
+    options: ["Male", "Female"],
+    required: true,
+  },
+  { label: "Email Address", name: "email", type: "text", required: true },
+  { label: "Phone Number", name: "phone", type: "text", required: true },
+  { label: "City", name: "city", type: "text", required: true },
+  {
+    label: "Are you a Christian?",
+    name: "is_christian",
+    type: "radio",
+    options: ["Yes", "No"],
+    required: true,
+  },
+  {
+    label: "Tell us briefly about your walk with God.",
+    name: "walk_with_god",
+    type: "textarea",
+    required: true,
+  },
+  {
+    label: "Are you part of a local church or Christian community?",
+    name: "in_church",
+    type: "radio",
+    options: ["Yes", "No"],
+    required: true,
+  },
+  {
+    label: "If yes, name the church or group",
+    name: "church_name",
+    type: "text",
+    required: false,
+  },
+];
+
 function StepBar({ step }: { step: number }) {
   const steps = ["Choose Track", "Questions", "Done!"];
   return (
@@ -502,6 +544,75 @@ export default function RegisterPage() {
             onSubmit={handleSubmit}
             className="flex flex-col gap-6 mt-2 animate-fade-in"
           >
+            <h2 className="text-2xl font-semibold mb-2 text-center bg-gradient-to-r from-[#DD33FF] to-[#7C3AED] bg-clip-text text-transparent">
+              Basic Information
+            </h2>
+            <div className="flex flex-col gap-4">
+              {basicInfoQuestions.map((q) => {
+                // Conditional display for church_name
+                if (q.name === "church_name" && form["in_church"] !== "Yes")
+                  return null;
+                return (
+                  <div
+                    key={q.name}
+                    className="flex flex-col gap-1 bg-white/10 rounded-xl p-4 shadow-md border border-white/10"
+                  >
+                    <label
+                      htmlFor={q.name}
+                      className="text-base font-semibold mb-1 text-[#DD33FF]"
+                    >
+                      {q.label}
+                    </label>
+                    {q.type === "radio" && q.options && (
+                      <div className="flex flex-wrap gap-3 mt-1">
+                        {q.options.map((opt) => (
+                          <label
+                            key={opt}
+                            className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#B43CFB]/20 hover:bg-[#DD33FF]/20 cursor-pointer transition-all border border-transparent focus-within:border-[#DD33FF]"
+                          >
+                            <input
+                              type="radio"
+                              name={q.name}
+                              value={opt}
+                              checked={form[q.name] === opt}
+                              onChange={handleInputChange}
+                              className="accent-[#DD33FF] w-4 h-4"
+                              required={q.required}
+                            />
+                            <span className="text-sm text-white">{opt}</span>
+                          </label>
+                        ))}
+                      </div>
+                    )}
+                    {q.type === "textarea" && (
+                      <textarea
+                        id={q.name}
+                        name={q.name}
+                        value={form[q.name] || ""}
+                        onChange={handleInputChange}
+                        className="rounded-lg p-2 text-black min-h-[60px] border-2 border-[#DD33FF]/30 focus:border-[#DD33FF] focus:ring-2 focus:ring-[#DD33FF]/30"
+                        required={q.required}
+                      />
+                    )}
+                    {(!q.type || q.type === "text") && (
+                      <input
+                        id={q.name}
+                        name={q.name}
+                        type="text"
+                        value={form[q.name] || ""}
+                        onChange={handleInputChange}
+                        className="rounded-lg p-2 text-black border-2 border-[#DD33FF]/30 focus:border-[#DD33FF] focus:ring-2 focus:ring-[#DD33FF]/30"
+                        required={
+                          q.required &&
+                          (q.name !== "church_name" ||
+                            form["in_church"] === "Yes")
+                        }
+                      />
+                    )}
+                  </div>
+                );
+              })}
+            </div>
             <h2 className="text-2xl font-semibold mb-2 text-center bg-gradient-to-r from-[#DD33FF] to-[#7C3AED] bg-clip-text text-transparent">
               {categories.find((c) => c.key === selectedCategory)?.label}{" "}
               Questions
